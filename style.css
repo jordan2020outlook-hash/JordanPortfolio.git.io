@@ -286,21 +286,41 @@ div.texto:hover{
     transform: scale(1.01);
     text-shadow: 0 0 15px #000000d2;
 }
-section.logos{
+.contenedorTitulo{
     width: 100%;
-    height: 600px;
-    display: grid;
-    position: relative;
-    grid-template-columns: repeat(4,1fr);
-    align-items: center;
+    padding: 40px 0;
     justify-items: center;
-    z-index: 4;
+}
+.tituloLogos{
+    display: block;
+    width: 30%;
+    margin: 0;
+    
+    scale: 1;
+    transition: 0.5s ease;
+    font-size: 100px;
+}
+.bloqueTres{
     background:
     linear-gradient(
-    30deg,
+    50deg,
     #091842 0%,
     #002992 100%
     );
+    position: relative;
+}
+section.logos{
+    padding: 4% 0;
+    width: 100%;
+    height: 80%;
+    display:flex;
+    position: relative;
+    align-items: center;
+    justify-items: center;
+    z-index: 4;
+    
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 @keyframes flotar2{
     0%{
@@ -310,41 +330,23 @@ section.logos{
         transform: translateY(-10px);
     }
 }
-section.logos div{
-    width: 50%;
+section.logos svg{
     filter: drop-shadow(1px 5px 10px rgba(0, 0, 0, 0.63));
     animation: flotar2 3s ease-in-out infinite;
     scale: 1;
+    width: 300px;
+    scale: 1;
+    transition: 5s ease;
 }
-section.logos div.HTML{
-    transition: 3s ease;
-}
-section.logos div.HTML:hover{
-    transform: scale(1.02);
+
+
+
+
+section.logos svg:hover{
+    transform: scale(1.1);
     animation: none;
 }
-section.logos div.python:hover{
-    transform: scale(1.02);
-    animation: none;
-}
-section.logos div.javaScript:hover{
-    transform: scale(1.02);
-    animation: none;
-}
-section.logos div.css:hover{
-    transform: scale(1.02);
-    animation: none;
-}
-.sombra-piso {
-  width: 100%;       /* Un poco más angosta que el SVG */
-  height: 20%;       /* Altura pequeña para que parezca una elipse aplastada */
-  background: rgba(0, 0, 0, 0.1); /* Color oscuro y semitransparente */
-  border-radius: 50%; /* Lo convierte en un círculo/óvalo */
-  margin: 10px auto 0; /* Separa la sombra del SVG y la centra */
-  
-  /* El secreto para el realismo */
-  filter: blur(300px);  /* Difumina los bordes de la sombra */
-}
+
 .certificados{
     display:flex;
     justify-content:center;
@@ -352,12 +354,15 @@ section.logos div.css:hover{
     gap:20px;
     min-height: 60%;
     margin: 0;
+    padding: 40px 0;
 }
 
 .contenedor{
     width:50%   ;
     overflow:hidden;
     margin: 0;
+    position: relative;
+    filter: drop-shadow(10px 5px 10px #000000ad) ;
 }
 
 .carrusel{
@@ -378,20 +383,24 @@ section.logos div.css:hover{
     border-radius:30px;
     
 }
-div button{
-    display: grid;
-    grid-template:repeat(2,1fr) ;
+div .botones{
+    display: flex;
     width: 20%;
-    display: block;
     align-items: center;
     justify-items: center;
+    z-index: 10;
+    position: absolute;
+    bottom: 10px;
+    right: 40%;
+    
 }
 button{
-    width: 10%;
-    color: white;
-    background-color: #081664;
-    filter: drop-shadow(1px 1px 2px rgb(0, 0, 0));
-
+    width: 100%;
+    font-size: 26px;
+    color: rgb(0, 0, 0);
+    background: none;
+    border: none;
+    filter:drop-shadow(1px 1px 10px rgb(255, 255, 255));
 }
 div.curso{
     font-size: 100px;
@@ -400,53 +409,10 @@ div.curso{
     align-items: center;
     justify-items: center;
     margin-top: 0;
+    padding: 40px 0;
 }
 div.curso p{
     margin: 0;
-}
-
-@media screen and (max-width: 1510px){
-    div.texto{
-       font-size: 16px;
-    }
-    .lineas-fondo svg{
-        width: 100vw;
-        height: 100vh;
-    }
-}
-@media  screen and (max-width:1147px){
-    div.infoYFoto{
-        flex-direction: column;
-        height: auto;
-        align-items: center;
-        height: 50%;
-    }
-
-    div.texto{
-        width: 90%;
-        height: auto;
-        margin: 0;
-        text-shadow:1px 1px 20px #000000;
-    }
-
-    div.foto1{
-        width: 0px;
-        height: 0px;
-    }
-    section.logos {
-        width: 100%;
-        grid-template-columns: repeat(2,1fr)
-    }
-    
-}
-@media  screen and (max-width:593px){
-    .nombre{
-        font-size: 10px;
-        width: 100%;
-    }
-    .especialidad{
-        font-size: 30px;
-    }
 }
 .navbar{
     display: flex;
@@ -465,10 +431,180 @@ div.curso p{
     font-size: 35px;
     cursor: pointer;
 }
+.Ulises{
+    width: 100%;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.textoAmigo{
+    flex: 2;
+    font-size: 20px;
+    text-align: justify;
+    margin: 0 15px;
+}
+div.imagenUlises{
+    display: block;
+    height: 100%;
+    width: 100%;
+    flex: 1;
+}
+.palabra{
+    display: inline;
+    font-size: 40px;
+}
+img.fotoUlises{
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    
+}
+.tituloUlises{
+    width: 100%;
+    text-align: center;
+    font-size: 300%;
+}
+@media screen and (max-width: 1510px){
+    div.texto{
+       font-size: 16px;
+    }
+    .lineas-fondo svg{
+        width: 100vw;
+        height: 100vh;
+    }
+    nav, nav ul, nav ul li{
+        margin: 0 70px;
+    }
+}
+@media  screen and (max-width:1147px){
+    div.infoYFoto{
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        height: 50%;
+    }
+    nav, nav ul, nav ul li{
+        margin: 0 40px;
+    }
+    .contenedor{
+        width: 100%;
+    }
+    .contenedorTitulo{
+        justify-content: center;
+        overflow: hidden;
+    }
+    .tituloLogos{
+        font-size: 80px;
+        width: 100%;
+        text-align: center;
+    }
+    div.texto{
+        width: 90%;
+        height: auto;
+        margin: 0;
+        text-shadow:1px 1px 20px #000000;
+    }
+
+    div.foto1{
+        width: 0px;
+        height: 0px;
+    }
+    
+}
+
+@media  screen and (max-width:817px) {
+    .menu{
+        display: none;
+    }
+    ul#menu.menu.desactivado{
+        display: none;
+    }
+    .menu.active{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px ;
+        margin: 0;
+        z-index: 10;
+        border-radius: 20px;
+    }
+    .menu.active ul{
+        margin: 0;
+        padding: 0;
+    }
+
+    nav, nav ul, nav ul li{
+        margin: 0;
+    }
+    ul#menu.menu.active{
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+    .menu.active li{
+        flex-wrap: wrap;
+        padding: 10px;
+
+        background: #110f72;
+        width: 100%;
+        margin:0;
+    }
+    nav{
+        width: 100%;
+        border-radius: 0;
+    }
+    .menu-btn{
+        display: block;
+        padding-left: 10%;
+    }
+
+    
+}
+@media  screen and (max-width:593px){
+    .nombre{
+        font-size: 10px;
+        width: 100%;
+    }
+    .especialidad{
+        font-size: 30px;
+    }
+    section.logos svg{
+        width: 100%;
+        max-width: 120px;
+        height: auto;
+        justify-content: space-evenly;
+    }
+    section.logos .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    section.logos{
+        width: 100%;
+        
+        
+    }
+    button{
+        font-size: 20px;
+    }
+    .contenedor{
+        width: 100%;
+    }
+    div.curso{
+    font-size: 60px;
+    }
+}
+
 @media  screen and (max-width:627px) {
      div.texto{
         font-size: 13px;
         overflow: scroll;
+    }
+    .tituloLogos{
+        font-size: 55px;
     }
     section.bloqueDos{
         height: 60%;
@@ -488,36 +624,8 @@ div.curso p{
         font-size: 20px;
         margin-left: 0;
     }
-    .menu{
-        display: none;
-    }
 
-    .menu.active{
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        padding: 20px ;
-        margin-top: 0;
-        
 
-    }
-    .menu.active li{
-        padding: 10px;
-        border-radius: 30px;
-        margin-left: 0;
-        width: 90%;
-        background: rgb(30, 14, 124);
-        margin-top: 0;
-        margin-bottom: 0;
-        border-color: 12px #091842;
-    }
 
-    .menu-btn{
-        display: block;
-        padding-left: 10%;
-    }
 
 }

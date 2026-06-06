@@ -1,9 +1,9 @@
 const menuBtn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
-
-menuBtn.addEventListener("click", () => {
+function abrir(){
     menu.classList.toggle("active");
-});
+}
+
 const carrusel = document.querySelector(".carrusel");
 
 const btnSiguiente = document.getElementById("siguiente");
