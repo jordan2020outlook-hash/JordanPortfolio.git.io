@@ -259,9 +259,9 @@ nav ul{
     margin: 0;
     padding: 0;
     margin-top: 4px;
+    justify-content: space-evenly;
 }
 nav ul li{
-    margin-left: 380px;
     list-style: none;
     margin-right: 0;
     scale: 1;
@@ -336,7 +336,8 @@ section.logos svg{
     scale: 1;
     width: 300px;
     scale: 1;
-    transition: 5s ease;
+    transition: 0.3s ease;
+    margin-top: 10px;
 }
 
 
@@ -344,6 +345,7 @@ section.logos svg{
 
 section.logos svg:hover{
     transform: scale(1.1);
+    filter: drop-shadow(0px 0px 13px rgb(0, 0, 0));
     animation: none;
 }
 
@@ -358,24 +360,52 @@ section.logos svg:hover{
 }
 
 .contenedor{
-    width:50%   ;
+    width:100%   ;
     overflow:hidden;
     margin: 0;
     position: relative;
     filter: drop-shadow(10px 5px 10px #000000ad) ;
+    margin-left: 20px;
 }
 
 .carrusel{
     display:flex;
-    transition:transform 0.5s ease;
+    transition:transform 0.5s ease ;
+    scale: 1;
     margin:0;
-    
+    animation: mover 18s infinite;
 }
+
 
 .slide{
     min-width:100%;
     display:flex;
     justify-content:center;
+    transition: transform 1 ease;
+    
+}
+.carrusel:hover {
+    animation-play-state: paused;
+    transform: scale(1.1);
+}
+
+
+@keyframes mover{
+    0%, 30%{
+        transform: translateX(0);
+    }
+
+    33%, 63%{
+        transform: translateX(-100%);
+    }
+
+    66%, 96%{
+        transform: translateX(-200%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
 }
 
 .slide img{
@@ -383,25 +413,7 @@ section.logos svg:hover{
     border-radius:30px;
     
 }
-div .botones{
-    display: flex;
-    width: 20%;
-    align-items: center;
-    justify-items: center;
-    z-index: 10;
-    position: absolute;
-    bottom: 10px;
-    right: 40%;
-    
-}
-button{
-    width: 100%;
-    font-size: 26px;
-    color: rgb(0, 0, 0);
-    background: none;
-    border: none;
-    filter:drop-shadow(1px 1px 10px rgb(255, 255, 255));
-}
+
 div.curso{
     font-size: 100px;
     width: 100%;
@@ -410,9 +422,35 @@ div.curso{
     justify-items: center;
     margin-top: 0;
     padding: 40px 0;
+    display: flex;
+    justify-content: space-evenly;
 }
+
+.cursosTitulo{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 100px;
+    margin: 0;
+}
+
 div.curso p{
     margin: 0;
+}
+.textoCurso{
+    font-size: 30px ;
+    text-align: justify;
+    padding : 20px;
+    margin-left: 20px;
+    padding-top: 0;
+    margin-top: 0;
+}
+.tituloTextoCurso{
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 0;
+    padding-top: 0;
 }
 .navbar{
     display: flex;
@@ -431,39 +469,8 @@ div.curso p{
     font-size: 35px;
     cursor: pointer;
 }
-.Ulises{
-    width: 100%;
-    align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-.textoAmigo{
-    flex: 2;
-    font-size: 20px;
-    text-align: justify;
-    margin: 0 15px;
-}
-div.imagenUlises{
-    display: block;
-    height: 100%;
-    width: 100%;
-    flex: 1;
-}
-.palabra{
-    display: inline;
-    font-size: 40px;
-}
-img.fotoUlises{
-    width: 100%;
-    height: auto;
-    border-radius: 30px;
-    
-}
-.tituloUlises{
-    width: 100%;
-    text-align: center;
-    font-size: 300%;
-}
+
+
 @media screen and (max-width: 1510px){
     div.texto{
        font-size: 16px;
